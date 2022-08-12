@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:travel/utils/app_layout.dart';
 import 'package:travel/utils/app_styles.dart';
 import 'package:travel/widgets/thick_circle.dart';
@@ -15,7 +16,11 @@ class TicketView extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.only(left: 16),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
+            /*
+            This container shows the top blue section of the card.
+            */
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -78,12 +83,40 @@ class TicketView extends StatelessWidget {
                       const ThickCircle(),
                       const Spacer(),
                       Text(
-                        "London",
+                        "LDN",
                         style: Styles.headLineStyle_3
                             .copyWith(color: Colors.white),
                       ),
                     ],
                   ),
+                  const Gap(3),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        width: 100,
+                        child: Text(
+                          "New York",
+                          style: Styles.headLineStyle_4
+                              .copyWith(color: Colors.white),
+                        ),
+                      ),
+                      Text(
+                        "8H 30M",
+                        style: Styles.headLineStyle_4
+                            .copyWith(color: Colors.white),
+                      ),
+                      SizedBox(
+                        width: 100,
+                        child: Text(
+                          "London",
+                          textAlign: TextAlign.end,
+                          style: Styles.headLineStyle_4
+                              .copyWith(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             )
