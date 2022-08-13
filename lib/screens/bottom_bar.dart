@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:travel/screens/home_screen.dart';
+import 'package:travel/screens/search.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class _BottomBarState extends State<BottomBar> {
   int _selecteIndex = 0;
   static final List<Widget> _pageOptions = <Widget>[
     const HomeScreen(),
-    const Text("Search"),
+    const Search(),
     const Text("Tickets"),
     const Text("Profile"),
   ];
