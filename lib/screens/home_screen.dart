@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:travel/screens/ticket_view.dart';
 import 'package:travel/utils/app_styles.dart';
+import 'package:travel/utils/data.dart';
 import 'package:travel/utils/trip_details.dart';
+import 'package:travel/widgets/hotel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -93,12 +95,41 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               children: [
                 TicketView(
-                  trip: tripOne,
+                  ticket: tickets[0],
                 ),
                 TicketView(
-                  trip: tripTwo,
+                  ticket: tickets[1],
                 ),
               ],
+            ),
+          ),
+          const Gap(15),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Hotels",
+                  style: Styles.headLineStyle_2,
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Text(
+                    "View All",
+                    style:
+                        Styles.textStyle.copyWith(color: Styles.primaryColor),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Gap(15),
+          SingleChildScrollView(
+            padding: const EdgeInsets.only(left: 20),
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: hotels.map((e) => HotelScteen(hotel: e)).toList(),
             ),
           ),
         ],

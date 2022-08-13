@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:travel/utils/app_layout.dart';
-import 'package:travel/utils/trip_details.dart';
+import 'package:travel/utils/data.dart';
 import 'package:travel/widgets/ticket_bottom_section.dart';
 import 'package:travel/widgets/ticket_middle_section.dart';
 import 'package:travel/widgets/ticket_top_section.dart';
 
 class TicketView extends StatelessWidget {
-  final Trip trip;
-  const TicketView({Key? key, required this.trip}) : super(key: key);
+  final Map<String, dynamic> ticket;
+  const TicketView({Key? key, required this.ticket}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +24,9 @@ class TicketView extends StatelessWidget {
             This container shows the top blue section of the card.
             */
             TicketTopSection(
-                departure: trip.depature,
-                destination: trip.destination,
-                duration: trip.duration),
+                departure: ticket["from"],
+                destination: ticket["to"],
+                duration: ticket["duration"]!),
 
             /*
             Orage section of the ticket
@@ -36,9 +36,9 @@ class TicketView extends StatelessWidget {
             Bottom section of the ticket
             */
             TicketBottonSection(
-                depatureDate: trip.depatureDate,
-                depatureTime: trip.depatureTime,
-                gateNumber: trip.gateNumber),
+                depatureDate: ticket["departure_date"],
+                depatureTime: ticket["departure_time"],
+                gateNumber: ticket["gate"]!),
           ],
         ),
       ),

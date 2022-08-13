@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:travel/utils/airplane.dart';
-import 'package:travel/utils/trip_details.dart';
 import '../utils/app_styles.dart';
 
 class TicketTopSection extends StatelessWidget {
-  final City departure;
-  final City destination;
+  final Map<String, dynamic> departure;
+  final Map<String, dynamic> destination;
   final String duration;
 
   const TicketTopSection(
@@ -37,13 +36,13 @@ class TicketTopSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      departure.abr,
+                      departure["code"]!,
                       style:
                           Styles.headLineStyle_3.copyWith(color: Colors.white),
                     ),
                     const Gap(5),
                     Text(
-                      departure.name,
+                      departure["name"]!,
                       style:
                           Styles.headLineStyle_4.copyWith(color: Colors.white),
                     ),
@@ -70,13 +69,13 @@ class TicketTopSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      destination.abr,
+                      destination["code"]!,
                       style:
                           Styles.headLineStyle_3.copyWith(color: Colors.white),
                     ),
                     const Gap(5),
                     Text(
-                      destination.name,
+                      destination["name"]!,
                       style:
                           Styles.headLineStyle_4.copyWith(color: Colors.white),
                     ),
