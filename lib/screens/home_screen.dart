@@ -4,7 +4,6 @@ import 'package:gap/gap.dart';
 import 'package:travel/screens/ticket_view.dart';
 import 'package:travel/utils/app_styles.dart';
 import 'package:travel/utils/data.dart';
-import 'package:travel/utils/trip_details.dart';
 import 'package:travel/widgets/hotel.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -93,15 +92,9 @@ class HomeScreen extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: [
-                TicketView(
-                  ticket: tickets[0],
-                ),
-                TicketView(
-                  ticket: tickets[1],
-                ),
-              ],
-            ),
+                children: tickets
+                    .map((ticket) => TicketView(ticket: ticket))
+                    .toList()),
           ),
           const Gap(15),
           Container(

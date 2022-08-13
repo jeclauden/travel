@@ -35,7 +35,7 @@ List<Map<String, dynamic>> tickets = [
       "code": "LDN",
       "name": "London",
     },
-    "duration": "8H 30M",
+    "duration": "8h 30min",
     "departure_date": "1 MAY",
     "departure_time": "08:00 AM",
     "gate": 25,
@@ -49,9 +49,23 @@ List<Map<String, dynamic>> tickets = [
       "code": "SYD",
       "name": "Sydney",
     },
-    "duration": "2H 15M",
+    "duration": "2h 15min",
     "departure_date": "10 Oct",
     "departure_time": "05:00 PM",
     "gate": 13,
+  },
+  {
+    "from": {
+      "code": "LAX",
+      "name": "Los Angeles",
+    },
+    "to": {
+      "code": "SFO",
+      "name": "San Fransisco",
+    },
+    "duration": "1h 25min",
+    "departure_date": "15 Dec",
+    "departure_time": "2:00 PM",
+    "gate": 43,
   },
 ];

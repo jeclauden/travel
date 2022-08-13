@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:travel/utils/app_layout.dart';
-import 'package:travel/utils/data.dart';
 import 'package:travel/widgets/ticket_bottom_section.dart';
 import 'package:travel/widgets/ticket_middle_section.dart';
 import 'package:travel/widgets/ticket_top_section.dart';

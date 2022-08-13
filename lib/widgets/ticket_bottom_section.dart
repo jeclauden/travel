@@ -35,7 +35,7 @@ class TicketBottonSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Departure Date",
+                      "Date",
                       style:
                           Styles.headLineStyle_4.copyWith(color: Colors.white),
                     ),
@@ -54,7 +54,7 @@ class TicketBottonSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "Departure Time",
+                      "Time",
                       style:
                           Styles.headLineStyle_4.copyWith(color: Colors.white),
                     ),
@@ -73,7 +73,7 @@ class TicketBottonSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      "Gate Number",
+                      "Gate",
                       style:
                           Styles.headLineStyle_4.copyWith(color: Colors.white),
                     ),
