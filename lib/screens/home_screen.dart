@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:travel/screens/ticket_view.dart';
 import 'package:travel/utils/app_styles.dart';
+import 'package:travel/utils/trip_details.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -87,7 +88,19 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Gap(15),
-          const TicketView(),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                TicketView(
+                  trip: tripOne,
+                ),
+                TicketView(
+                  trip: tripTwo,
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
