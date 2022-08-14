@@ -14,32 +14,31 @@ class TicketView extends StatelessWidget {
     return SizedBox(
       width: size.width * 0.95,
       height: 200,
-      child: Container(
-        margin: const EdgeInsets.only(left: 16),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            /*
-            This container shows the top blue section of the card.
-            */
-            TicketTopSection(
-                departure: ticket["from"],
-                destination: ticket["to"],
-                duration: ticket["duration"]!),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          /*
+          This container shows the top blue section of the card.
+          */
+          TicketTopSection(
+            departure: ticket["from"],
+            destination: ticket["to"],
+            duration: ticket["duration"]!,
+          ),
 
-            /*
-            Orage section of the ticket
-            */
-            const TicketMiddleSection(),
-            /*
-            Bottom section of the ticket
-            */
-            TicketBottonSection(
-                depatureDate: ticket["departure_date"],
-                depatureTime: ticket["departure_time"],
-                gateNumber: ticket["gate"]!),
-          ],
-        ),
+          /*
+          Orage section of the ticket
+          */
+          const TicketMiddleSection(),
+          /*
+          Bottom section of the ticket
+          */
+          TicketBottonSection(
+            depatureDate: ticket["departure_date"],
+            depatureTime: ticket["departure_time"],
+            gateNumber: ticket["gate"]!,
+          ),
+        ],
       ),
     );
   }

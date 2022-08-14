@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:travel/utils/app_layout.dart';
 import 'package:travel/utils/app_styles.dart';
+import 'package:travel/widgets/app_tabs.dart';
 import 'package:travel/widgets/button.dart';
 import 'package:travel/widgets/search_form.dart';
 import 'package:travel/widgets/view_all.dart';
@@ -11,7 +12,6 @@ class Search extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = AppLayout.getSize(context);
     return Scaffold(
       backgroundColor: Styles.bgColor,
       body: ListView(
@@ -23,43 +23,7 @@ class Search extends StatelessWidget {
             style: Styles.headLineStyle_1.copyWith(fontSize: 35),
           ),
           const Gap(40),
-          FittedBox(
-            child: Container(
-              padding: const EdgeInsets.all(3.5),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Styles.primaryColor,
-              ),
-              child: Row(
-                children: [
-                  Container(
-                    width: size.width * 0.45,
-                    decoration: const BoxDecoration(
-                      borderRadius:
-                          BorderRadius.horizontal(left: Radius.circular(20)),
-                      color: Colors.white,
-                    ),
-                    padding: const EdgeInsets.symmetric(vertical: 7),
-                    child: const Center(
-                      child: Text("Airline Tickets"),
-                    ),
-                  ),
-                  Container(
-                    width: size.width * 0.45,
-                    decoration: const BoxDecoration(
-                      borderRadius:
-                          BorderRadius.horizontal(right: Radius.circular(20)),
-                      color: Colors.transparent,
-                    ),
-                    padding: const EdgeInsets.symmetric(vertical: 7),
-                    child: const Center(
-                      child: Text("Hotels"),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          const AppTabs(firstTab: "Airline Tickets", secondTab: "Hotels"),
           const Gap(20),
           const SearchForm(
             title: "Departure",
