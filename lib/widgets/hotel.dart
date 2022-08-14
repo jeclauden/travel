@@ -3,9 +3,9 @@ import 'package:gap/gap.dart';
 import 'package:travel/utils/app_layout.dart';
 import 'package:travel/utils/app_styles.dart';
 
-class HotelScteen extends StatelessWidget {
+class HotelCard extends StatelessWidget {
   final Map<String, dynamic> hotel;
-  const HotelScteen({Key? key, required this.hotel}) : super(key: key);
+  const HotelCard({Key? key, required this.hotel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,11 +47,11 @@ class HotelScteen extends StatelessWidget {
           const Gap(8),
           Text(
             hotel["destination"],
-            style: Styles.headLineStyle_3.copyWith(color: Colors.white),
+            style: Styles.headLineStyle_4.copyWith(color: Colors.white),
           ),
           const Gap(5),
           Text(
-            "\$${hotel["price"].toString()}/Night",
+            "\$${hotel["price"].toString()} per Night",
             style: Styles.headLineStyle_3.copyWith(color: Colors.white),
           ),
         ],

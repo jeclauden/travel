@@ -5,6 +5,7 @@ import 'package:travel/screens/ticket_view.dart';
 import 'package:travel/utils/app_styles.dart';
 import 'package:travel/utils/data.dart';
 import 'package:travel/widgets/hotel.dart';
+import 'package:travel/widgets/view_all.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -68,22 +69,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const Gap(20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Upcoming flights",
-                      style: Styles.headLineStyle_2,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Text(
-                        "View All",
-                        style: Styles.textStyle
-                            .copyWith(color: Styles.primaryColor),
-                      ),
-                    ),
-                  ],
+                const DoubleText(
+                  bigText: "Upcoming Flights",
+                  smallText: "View All",
                 ),
               ],
             ),
@@ -98,23 +86,12 @@ class HomeScreen extends StatelessWidget {
           ),
           const Gap(15),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Hotels",
-                  style: Styles.headLineStyle_2,
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: Text(
-                    "View All",
-                    style:
-                        Styles.textStyle.copyWith(color: Styles.primaryColor),
-                  ),
-                ),
-              ],
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
+            child: const DoubleText(
+              bigText: "Hotels",
+              smallText: "View All",
             ),
           ),
           const Gap(15),
@@ -122,7 +99,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20),
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: hotels.map((e) => HotelScteen(hotel: e)).toList(),
+              children: hotels.map((e) => HotelCard(hotel: e)).toList(),
             ),
           ),
         ],

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:travel/utils/app_layout.dart';
 import 'package:travel/utils/app_styles.dart';
+import 'package:travel/widgets/button.dart';
+import 'package:travel/widgets/search_form.dart';
+import 'package:travel/widgets/view_all.dart';
 
 class Search extends StatelessWidget {
   const Search({Key? key}) : super(key: key);
@@ -56,6 +59,20 @@ class Search extends StatelessWidget {
                 ],
               ),
             ),
+          ),
+          const Gap(20),
+          const SearchForm(
+            title: "Departure",
+            icon: Icons.flight_takeoff,
+          ),
+          const Gap(20),
+          const SearchForm(title: "Arrival", icon: Icons.flight_land),
+          const Gap(20),
+          const Button(),
+          const Gap(20),
+          const DoubleText(
+            bigText: "Upcoming Flights",
+            smallText: "View All",
           ),
         ],
       ),
