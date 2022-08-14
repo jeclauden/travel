@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:travel/screens/ticket_view.dart';
-import 'package:travel/utils/app_layout.dart';
 import 'package:travel/utils/app_styles.dart';
 import 'package:travel/utils/data.dart';
 import 'package:travel/widgets/app_tabs.dart';
@@ -11,8 +10,8 @@ class TicketScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = AppLayout.getSize(context);
     return Scaffold(
+      backgroundColor: Styles.bgColor,
       body: Stack(
         children: [
           ListView(
@@ -29,9 +28,13 @@ class TicketScreen extends StatelessWidget {
               const Gap(40),
               const AppTabs(firstTab: "Upcoming", secondTab: "Previous"),
               const Gap(40),
-              Container(
-                // padding: const EdgeInsets.only(left: 16),
-                child: TicketView(ticket: tickets[0]),
+              TicketView(
+                ticket: tickets[0],
+                topGbColor: Colors.white,
+                bottomGbColor: Colors.white,
+                textColor_3: Colors.black,
+                textColor_4: Colors.grey,
+                airplaneColor: Colors.red,
               ),
             ],
           ),

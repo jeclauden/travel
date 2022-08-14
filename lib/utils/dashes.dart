@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class Dashes extends StatelessWidget {
   final double height;
   final double width;
+  final Color? color;
   final int spacerFactor;
 
   const Dashes({
     required this.height,
     required this.width,
     required this.spacerFactor,
+    this.color,
     Key? key,
   }) : super(key: key);
 
@@ -30,8 +32,8 @@ class Dashes extends StatelessWidget {
               (index) => SizedBox(
                 width: width,
                 height: height,
-                child: const DecoratedBox(
-                  decoration: BoxDecoration(color: Colors.white),
+                child: DecoratedBox(
+                  decoration: BoxDecoration(color: color ?? Colors.white),
                 ),
               ),
             ),

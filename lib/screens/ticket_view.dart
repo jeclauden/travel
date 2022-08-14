@@ -6,7 +6,23 @@ import 'package:travel/widgets/ticket_top_section.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
-  const TicketView({Key? key, required this.ticket}) : super(key: key);
+  final Color? textColor_3;
+  final Color? textColor_4;
+  final Color? topGbColor;
+  final Color? middleGbColor;
+  final Color? bottomGbColor;
+  final Color? airplaneColor;
+
+  const TicketView({
+    Key? key,
+    required this.ticket,
+    this.textColor_3,
+    this.textColor_4,
+    this.topGbColor,
+    this.middleGbColor,
+    this.bottomGbColor,
+    this.airplaneColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +40,10 @@ class TicketView extends StatelessWidget {
             departure: ticket["from"],
             destination: ticket["to"],
             duration: ticket["duration"]!,
+            textColor_3: textColor_3,
+            textColor_4: textColor_4,
+            bgColor: topGbColor,
+            airplaneColor: airplaneColor,
           ),
 
           /*
@@ -37,6 +57,9 @@ class TicketView extends StatelessWidget {
             depatureDate: ticket["departure_date"],
             depatureTime: ticket["departure_time"],
             gateNumber: ticket["gate"]!,
+            textColor_3: textColor_3,
+            textColor_4: textColor_4,
+            bgColor: bottomGbColor,
           ),
         ],
       ),

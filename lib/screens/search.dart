@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:travel/utils/app_layout.dart';
 import 'package:travel/utils/app_styles.dart';
 import 'package:travel/widgets/app_tabs.dart';
 import 'package:travel/widgets/button.dart';

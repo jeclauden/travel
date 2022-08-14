@@ -29,9 +29,8 @@ class Styles {
     fontWeight: FontWeight.bold,
   );
 
-  static TextStyle headLineStyle_3 = TextStyle(
+  static TextStyle headLineStyle_3 = const TextStyle(
     fontSize: 17,
-    color: Colors.grey.shade500,
     fontWeight: FontWeight.w500,
   );
 
